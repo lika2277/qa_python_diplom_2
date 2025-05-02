@@ -10,7 +10,7 @@ class TestLogin:
         assert (response.status_code == 200
                 and response.json().get('success'))
 
-    @allure.description('Логин с неверным логином и паролем')
+    @allure.title('Логин с неверным логином и паролем')
     def test_login_error(self, user):
         del self.credentials['email']
         response = user.login(self.credentials)

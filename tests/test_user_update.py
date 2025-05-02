@@ -11,7 +11,7 @@ class TestUserUpdate:
         assert (response.status_code == 200
                 and response.json().get('success'))
 
-    @allure.description('Без авторизации')
+    @allure.title('Без авторизации')
     def test_user_update_unauthorized(self, user):
         for type in ['email', 'password']:
             self.credentials[type] = user.generate()[type]
